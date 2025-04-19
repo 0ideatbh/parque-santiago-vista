@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Search, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -99,7 +98,7 @@ const PropertyFilter = ({ onFilterChange, currentFilters }: PropertyFilterProps)
             <Label htmlFor="availableOnly">Show available properties only</Label>
           </div>
           
-          <div className="flex space-x-2">
+          <div className="flex justify-center space-x-2">
             <Button type="submit" className="bg-realty-blue hover:bg-realty-navy text-white">
               Apply Filters
             </Button>
