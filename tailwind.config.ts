@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -19,6 +18,9 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+        'playfair': ['Playfair Display', 'serif'],
+      },
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -68,7 +70,13 @@ export default {
 					'coral': '#ED8936',
 					'sand': '#F6E8D3',
 					'teal': '#4FD1C5',
-					'navy': '#2C5282'
+					'navy': '#2C5282',
+					'deep-blue': '#1A365D',
+          'rich-coral': '#ED8936',
+          'warm-sand': '#F6E8D3',
+          'elegant-teal': '#4FD1C5',
+          'royal-navy': '#2C5282',
+          'luxe-gold': '#D4AF37'
 				}
 			},
 			borderRadius: {
