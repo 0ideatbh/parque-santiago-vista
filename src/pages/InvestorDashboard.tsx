@@ -43,7 +43,8 @@ const InvestorDashboard = () => {
         let propertyIds: string[] = [];
         
         if (user.role === 'investor') {
-          const investor = mockInvestors.find(inv => inv.email === user.email);
+          // Fix: Use user.id instead of user.email to find the investor
+          const investor = mockInvestors.find(inv => inv.id === user.id);
           propertyIds = investor?.invested_properties || [];
         } else if (user.role === 'admin') {
           // Admins can see all properties
