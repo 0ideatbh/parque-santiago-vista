@@ -1,6 +1,5 @@
-
 import { useState, useEffect } from 'react';
-import { Waves, UtensilsCrossed, PalmTree } from 'lucide-react';
+import { Waves, UtensilsCrossed, TreePalm } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import PropertyCard from '../components/properties/PropertyCard';
 import PropertyFilter from '../components/properties/PropertyFilter';
@@ -96,7 +95,7 @@ const Index = () => {
             </div>
             <div className="flex flex-col items-center">
               <div className="p-3 bg-realty-warm-sand rounded-full mb-2">
-                <PalmTree className="w-6 h-6 text-realty-deep-blue" />
+                <TreePalm className="w-6 h-6 text-realty-deep-blue" />
               </div>
               <span className="text-sm">Beach</span>
             </div>
