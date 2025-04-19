@@ -1,5 +1,6 @@
+
 import { useState, useEffect } from 'react';
-import { Pool, Beach, Utensils } from 'lucide-react';
+import { Waves, UtensilsCrossed, PalmTree } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import PropertyCard from '../components/properties/PropertyCard';
 import PropertyFilter from '../components/properties/PropertyFilter';
@@ -89,19 +90,19 @@ const Index = () => {
           <div className="flex justify-center gap-8 mb-8">
             <div className="flex flex-col items-center">
               <div className="p-3 bg-realty-warm-sand rounded-full mb-2">
-                <Pool className="w-6 h-6 text-realty-deep-blue" />
+                <Waves className="w-6 h-6 text-realty-deep-blue" />
               </div>
               <span className="text-sm">Pools</span>
             </div>
             <div className="flex flex-col items-center">
               <div className="p-3 bg-realty-warm-sand rounded-full mb-2">
-                <Beach className="w-6 h-6 text-realty-deep-blue" />
+                <PalmTree className="w-6 h-6 text-realty-deep-blue" />
               </div>
               <span className="text-sm">Beach</span>
             </div>
             <div className="flex flex-col items-center">
               <div className="p-3 bg-realty-warm-sand rounded-full mb-2">
-                <Utensils className="w-6 h-6 text-realty-deep-blue" />
+                <UtensilsCrossed className="w-6 h-6 text-realty-deep-blue" />
               </div>
               <span className="text-sm">Dining</span>
             </div>
