@@ -11,8 +11,6 @@ import About from "./pages/About";
 import PropertyDetail from "./pages/PropertyDetail";
 import AdminPanel from "./pages/AdminPanel";
 import InvestorDashboard from "./pages/InvestorDashboard";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,8 +27,6 @@ const App = () => (
           <Route path="/property/:id" element={<PropertyDetail />} />
           <Route path="/admin" element={<AdminPanel />} />
           <Route path="/investor" element={<InvestorDashboard />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
