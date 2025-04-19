@@ -3,7 +3,16 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
-const Navbar = () => {
+interface NavbarProps {
+  user?: {
+    name: string;
+    role: 'admin' | 'investor';
+    id?: string;
+  };
+  onLogout?: () => void;
+}
+
+const Navbar = ({ user, onLogout }: NavbarProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -24,6 +33,24 @@ const Navbar = () => {
             <Link to="/about" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-realty-blue">
               About
             </Link>
+            {user && user.role === 'admin' && (
+              <Link to="/admin" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-realty-blue">
+                Admin
+              </Link>
+            )}
+            {user && (user.role === 'investor' || user.role === 'admin') && (
+              <Link to="/investor" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-realty-blue">
+                Investor
+              </Link>
+            )}
+            {user && onLogout && (
+              <button
+                onClick={onLogout}
+                className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-realty-blue"
+              >
+                Logout
+              </button>
+            )}
           </div>
           
           {/* Mobile Menu Button */}
@@ -64,6 +91,35 @@ const Navbar = () => {
             >
               About
             </Link>
+            {user && user.role === 'admin' && (
+              <Link 
+                to="/admin" 
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Admin
+              </Link>
+            )}
+            {user && (user.role === 'investor' || user.role === 'admin') && (
+              <Link 
+                to="/investor" 
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Investor
+              </Link>
+            )}
+            {user && onLogout && (
+              <button
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  onLogout();
+                }}
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+              >
+                Logout
+              </button>
+            )}
           </div>
         </div>
       )}
