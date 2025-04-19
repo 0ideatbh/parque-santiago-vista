@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Pages
 import Index from "./pages/Index";
+import About from "./pages/About";
 import PropertyDetail from "./pages/PropertyDetail";
 import AdminPanel from "./pages/AdminPanel";
 import InvestorDashboard from "./pages/InvestorDashboard";
@@ -24,6 +25,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/about" element={<About />} />
           <Route path="/property/:id" element={<PropertyDetail />} />
           <Route path="/admin" element={<AdminPanel />} />
           <Route path="/investor" element={<InvestorDashboard />} />

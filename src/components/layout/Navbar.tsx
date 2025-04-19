@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, User, LogOut } from 'lucide-react';
@@ -35,6 +34,9 @@ const Navbar = ({ user, onLogout }: NavbarProps) => {
           <div className="hidden md:ml-6 md:flex md:items-center md:space-x-4">
             <Link to="/" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-realty-blue">
               Properties
+            </Link>
+            <Link to="/about" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-realty-blue">
+              About
             </Link>
             {user?.role === 'admin' && (
               <Link to="/admin" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-realty-blue">
@@ -103,6 +105,13 @@ const Navbar = ({ user, onLogout }: NavbarProps) => {
               onClick={() => setIsMenuOpen(false)}
             >
               Properties
+            </Link>
+            <Link 
+              to="/about" 
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              About
             </Link>
             {user?.role === 'admin' && (
               <Link 
